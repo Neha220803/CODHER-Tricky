@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("detect1.html")
+    return render_template("index.html")
 
 @app.route("/check_fraud", methods=["POST"])
 def check_fraud():
@@ -56,9 +56,9 @@ def is_fraud(txn_id, amount):
 
     # This is just an example code, replace it with your actual code
     if acc > 0.5:
-        return render_template ('detect1.html',pred='This is a Fraud Transaction'\nProbability of Fraud transaction occuring is {}'.format(acc))
+        return render_template ('index.html',pred='This is a Fraud Transaction'\nProbability of Fraud transaction occuring is {}'.format(acc))
     else:
-        return render_template('detect1.html',pred='Not a Fraud Transaction'\nProbability of Fraud transaction occuring is{}'.format(acc))
+        return render_template('index.html',pred='Not a Fraud Transaction'\nProbability of Fraud transaction occuring is{}'.format(acc))
 
 
 if __name__ == "__main__":
